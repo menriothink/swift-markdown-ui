@@ -23,8 +23,10 @@ struct CodeBlockView: View {
   }
 
   private var label: some View {
-    self.codeSyntaxHighlighter.highlightCode(self.content, language: self.fenceInfo)
-      .textStyleFont()
-      .textStyleForegroundColor()
+      LazyVStack {
+          self.codeSyntaxHighlighter.highlightCode(self.content, language: self.fenceInfo)
+              .textStyleFont()
+              .textStyleForegroundColor()
+      }
   }
 }

@@ -3,6 +3,8 @@ import SwiftUI
 struct TextStyleAttributesReader<Content: View>: View {
   @Environment(\.textStyle) private var textStyle
 
+  @State private var contentView: Content?
+
   private let content: (AttributeContainer) -> Content
 
   init(@ViewBuilder content: @escaping (_ attributes: AttributeContainer) -> Content) {
@@ -10,7 +12,21 @@ struct TextStyleAttributesReader<Content: View>: View {
   }
 
   var body: some View {
-    self.content(self.attributes)
+      //VStack {
+      //    if let contentView {
+      //        contentView
+      //    }
+      //}
+      //.task(priority: .high) {
+      //    contentView = self.content(self.attributes)
+      //}
+      //.animation(nil)
+      //if #available(macOS 15.0, *) {
+          self.content(self.attributes)
+      //        .transition(.lineByLine(duration: 1))
+      //} else {
+      //    self.content(self.attributes)
+      //}
   }
 
   private var attributes: AttributeContainer {
