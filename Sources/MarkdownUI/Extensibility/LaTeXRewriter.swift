@@ -682,7 +682,7 @@ class Parser {
 #endif
 import SwiftUI
 
-@available(iOS 17.0, macOS 15.0, *)
+@available(iOS 18.0, macOS 15.0, *)
 struct LineByLineEffect: TextRenderer {
   var elapsedTime: TimeInterval // Time elapsed since the start of the animation
   var elementDuration: TimeInterval // Duration of each element's animation
@@ -759,7 +759,7 @@ struct LineByLineEffect: TextRenderer {
   }
 }
 
-@available(iOS 17.0, macOS 14.0, *)
+@available(iOS 18.0, macOS 14.0, *)
 extension Text.Layout {
   var flattenedRuns: some RandomAccessCollection<Text.Layout.Run> {
     // Flatten the lines into runs
@@ -774,7 +774,7 @@ extension Text.Layout {
   }
 }
 
-@available(iOS 17.0, macOS 15.0, *)
+@available(iOS 18.0, macOS 15.0, *)
 struct LineByLineTransition: Transition {
   let duration: TimeInterval
   init(duration: TimeInterval = 1.0) {
@@ -798,7 +798,7 @@ struct LineByLineTransition: Transition {
   }
 }
 
-@available(iOS 17.0, macOS 15.0, *)
+@available(iOS 18.0, macOS 15.0, *)
 extension AnyTransition {
     @MainActor static func lineByLine(duration: TimeInterval = 1.0) -> AnyTransition {
         // 直接用我们的自定义 Transition 初始化一个 AnyTransition
