@@ -1,6 +1,8 @@
 import SwiftUI
 import SwiftMath
+#if os(macOS)
 import AppKit
+#endif
 
 extension Sequence where Element == InlineNode {
   func renderText(
